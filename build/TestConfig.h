@@ -1,0 +1,5 @@
+#define TEST_VERSION_MAJOR 1
+#define TEST_VERSION_MINER 0
+#define TEST_VERSION_PATCH 2
+
+#define TIMESTAMP 

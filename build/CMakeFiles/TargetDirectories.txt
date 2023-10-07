@@ -1,0 +1,3 @@
+/home/tang_wenqi/computational_quantum_physics/build/CMakeFiles/rebuild_cache.dir
+/home/tang_wenqi/computational_quantum_physics/build/CMakeFiles/edit_cache.dir
+/home/tang_wenqi/computational_quantum_physics/build/CMakeFiles/CQP_DEMO.dir

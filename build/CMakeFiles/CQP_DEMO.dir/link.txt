@@ -1,0 +1,1 @@
+/usr/bin/g++  -O2 -DNDEBUG  -lfftw3_omp -lfftw3 -lm -fopenmp CMakeFiles/CQP_DEMO.dir/src/main.cpp.o  -o CQP_DEMO   -L/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11  -Wl,-rpath,/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11 -lfftw3 -lfftw3_omp -lgomp -lpthread 
