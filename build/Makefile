@@ -143,6 +143,33 @@ CQP_DEMO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CQP_DEMO.dir/build.make CMakeFiles/CQP_DEMO.dir/build
 .PHONY : CQP_DEMO/fast
 
+src/cqp_time_test.o: src/cqp_time_test.cpp.o
+
+.PHONY : src/cqp_time_test.o
+
+# target to build an object file
+src/cqp_time_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CQP_DEMO.dir/build.make CMakeFiles/CQP_DEMO.dir/src/cqp_time_test.cpp.o
+.PHONY : src/cqp_time_test.cpp.o
+
+src/cqp_time_test.i: src/cqp_time_test.cpp.i
+
+.PHONY : src/cqp_time_test.i
+
+# target to preprocess a source file
+src/cqp_time_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CQP_DEMO.dir/build.make CMakeFiles/CQP_DEMO.dir/src/cqp_time_test.cpp.i
+.PHONY : src/cqp_time_test.cpp.i
+
+src/cqp_time_test.s: src/cqp_time_test.cpp.s
+
+.PHONY : src/cqp_time_test.s
+
+# target to generate assembly for a file
+src/cqp_time_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CQP_DEMO.dir/build.make CMakeFiles/CQP_DEMO.dir/src/cqp_time_test.cpp.s
+.PHONY : src/cqp_time_test.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CQP_DEMO"
+	@echo "... src/cqp_time_test.o"
+	@echo "... src/cqp_time_test.i"
+	@echo "... src/cqp_time_test.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

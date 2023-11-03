@@ -6,11 +6,25 @@ string(TIMESTAMP COMPILE_TIME %Y%m%d-%H%M%S)
 
 find_package(OpenMP REQUIRED)
 
-add_compile_options(-Werror -Wunknown-pragmas -fopenmp)
-add_link_options(-lfftw3_omp -lfftw3 -lm -fopenmp)
+add_compile_options(
+    -Werror -Wunknown-pragmas
+    -fopenmp
+    -march=native
+    -O3 # -ffast-math
+    # -g 
+)
+
+add_link_options(
+    -lfftw3_omp -lfftw3 -lm
+    -fopenmp
+    # -g
+)
+
+# add_definitions(-DEIGEN_DONT_PARALLELIZE)
 
 set(SRC_LIST 
     ./src/main.cpp 
+    ./src/cqp_time_test.cpp
 )
 
 set(INC_DIR /usr/local/include)

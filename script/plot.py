@@ -37,25 +37,32 @@ with open(data_path, 'r', encoding="utf-8") as f:
 
     if dimension == 1:
         fig, ax = plt.subplots()
-        ax.plot(data_sheet[:, 0], data_sheet[:, 1] / data_sheet[:, 0], linewidth=2.0)
+        ax.plot(data_sheet[:, 0], data_sheet[:, 1], linewidth=2.0)
         plt.savefig(figure_path)
-        
 
     elif dimension == 2:
         count1, count2 = meta_data[3], meta_data[4]
-        r_max_count = 200
-        if grid_mode == POLAR or grid_mode == POLAR_HALF:
-            rs = np.reshape(data_sheet[:, 0], (count2, count1))
-            thetas = np.reshape(data_sheet[:, 1], (count2, count1))
-            results = np.log(np.reshape(data_sheet[:, 2], (count2, count1)) + 1e-8)
+        
+        rs = np.reshape(data_sheet[:, 0], (count2, count1))
+        thetas = np.reshape(data_sheet[:, 1], (count2, count1))
+        # results = np.log(np.reshape(data_sheet[:, 2], (count2, count1)) + 1e-8)
+        results = np.reshape(data_sheet[:, 2], (count2, count1))
 
-            rs = rs[:, 0: r_max_count]
-            thetas = thetas[:, 0: r_max_count]
-            results = results[:, 0: r_max_count]
+        # rs = rs[:, 0: r_max_count]
+        # thetas = thetas[:, 0: r_max_count]
+        # results = results[:, 0: r_max_count]
 
+        level = np.linspace(results.min(), results.max(), 50)
+        
+        if grid_mode == POLAR:
             fig, ax = plt.subplots(subplot_kw={"projection": "polar"})
-            cs = ax.contourf(thetas, rs, results, levels=np.linspace(results.min(), results.max(), 50))
-            plt.savefig(figure_path)
+            cs = ax.contourf(thetas, rs, results, levels=level)
+        elif grid_mode == XYZ:
+            fig, ax = plt.subplots()
+            cs = ax.contourf(rs, thetas, results, levels=level)
+        
+        plt.savefig(figure_path)
+            
 
     elif dimension == 3:
         #count1, count2, count3 = meta_data[3], meta_data[4], meta_data[5]
